@@ -5,14 +5,14 @@ import edu.cmu.lti.jawjaw.pobj.*;
 
 public class AdvancedDemo {
 	private static void run( String word, POS pos ) {
-		// “ú–{Œê WordNet ‚É’¼ÚƒAƒNƒZƒX‚µA¶ƒf[ƒ^‚ğˆ—
+		// æ—¥æœ¬èª WordNet ã«ç›´æ¥ã‚¢ã‚¯ã‚»ã‚¹ã—ã€ç”Ÿãƒ‡ãƒ¼ã‚¿ã‚’å‡¦ç†
 		List<Word> words = WordDAO.findWordsByLemmaAndPos(word, pos);
 		List<Sense> senses = SenseDAO.findSensesByWordid( words.get(0).getWordid() );
 		String synsetId = senses.get(0).getSynset();
 		Synset synset = SynsetDAO.findSynsetBySynset( synsetId );
 		SynsetDef synsetDef = SynsetDefDAO.findSynsetDefBySynsetAndLang(synsetId, Lang.eng);
 		List<Synlink> synlinks = SynlinkDAO.findSynlinksBySynset( synsetId );
-		// Œ‹‰Ê•\¦
+		// çµæœè¡¨ç¤º
 		System.out.println( words.get(0) );
 		System.out.println( senses.get(0) );
 		System.out.println( synset );
@@ -20,7 +20,7 @@ public class AdvancedDemo {
 		System.out.println( synlinks.get(0) );
 	}
 //	public static void main(String[] args) {
-//		// "©‘RŒ¾Œêˆ—"(–¼Œ)‚Æ‚¢‚¤’PŒê‚©‚ç“¾‚ç‚ê‚éŠÖŒW‚Ìˆê•”‚ğƒfƒ‚‚µ‚Ü‚·
-//		AdvancedDemo.run( "©‘RŒ¾Œêˆ—", POS.n ); 
+//		// "è‡ªç„¶è¨€èªå‡¦ç†"(åè©)ã¨ã„ã†å˜èªã‹ã‚‰å¾—ã‚‰ã‚Œã‚‹é–¢ä¿‚ã®ä¸€éƒ¨ã‚’ãƒ‡ãƒ¢ã—ã¾ã™
+//		AdvancedDemo.run( "è‡ªç„¶è¨€èªå‡¦ç†", POS.n ); 
 //	}
 }

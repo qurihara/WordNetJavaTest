@@ -4,13 +4,13 @@ import edu.cmu.lti.jawjaw.pobj.*;
 
 public class SimpleDemo {
 	private static void run( String word, POS pos ) {
-		// ƒtƒ@ƒT[ƒh‚©‚ç“ú–{Œê WordNet ‚ÉƒAƒNƒZƒX
+		// ãƒ•ã‚¡ã‚µãƒ¼ãƒ‰ã‹ã‚‰æ—¥æœ¬èª WordNet ã«ã‚¢ã‚¯ã‚»ã‚¹
 		Set<String> hypernyms = JAWJAW.findHypernyms(word, pos);
 		Set<String> hyponyms = JAWJAW.findHyponyms(word, pos);
 		Set<String> consequents = JAWJAW.findEntailments(word, pos);
 		Set<String> translations = JAWJAW.findTranslations(word, pos);
 		Set<String> definitions = JAWJAW.findDefinitions(word, pos);
-		// Œ‹‰Ê•\¦i‘½‹`Œê‚Í‚²‚Á‚¿‚á‚É‚È‚Á‚Ä‚¢‚Ü‚·j
+		// çµæœè¡¨ç¤ºï¼ˆå¤šç¾©èªã¯ã”ã£ã¡ã‚ƒã«ãªã£ã¦ã„ã¾ã™ï¼‰
 		System.out.println( "hypernyms of "+word+" : \t"+ hypernyms );
 		System.out.println( "hyponyms of "+word+" : \t"+ hyponyms );
 		System.out.println( word+" entails : \t\t"+ consequents );
@@ -19,9 +19,9 @@ public class SimpleDemo {
 	}
 
 	public static void main(String[] args) {
-		// "”ƒû"(“®Œ)‚Æ‚¢‚¤’PŒê‚©‚ç“¾‚ç‚ê‚éŠÖŒW‚Ìˆê•”‚ğƒfƒ‚‚µ‚Ü‚·
-		SimpleDemo.run( "”ƒû", POS.v );
-		//SimpleDemo.run( "”„”ƒ", POS.v );
+		// "è²·å"(å‹•è©)ã¨ã„ã†å˜èªã‹ã‚‰å¾—ã‚‰ã‚Œã‚‹é–¢ä¿‚ã®ä¸€éƒ¨ã‚’ãƒ‡ãƒ¢ã—ã¾ã™
+		SimpleDemo.run( "è²·å", POS.v );
+		//SimpleDemo.run( "å£²è²·", POS.v );
 	
 	}
 }
